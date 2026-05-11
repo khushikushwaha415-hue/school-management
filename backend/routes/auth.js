@@ -44,8 +44,7 @@ router.post('/login', async(req, res) => {
             process.env.JWT_SECRET, { expiresIn: '7d' }
         );
 
-        res.json({ token, name: user.name, role: user.role });
-
+        res.json({ token, name: user.name, role: user.role, email: user.email });
     } catch (error) {
         res.status(500).json({ message: 'Server error!', error });
     }
