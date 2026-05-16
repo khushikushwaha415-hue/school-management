@@ -1,7 +1,11 @@
 import axios from 'axios';
 
+// fallback added (IMPORTANT)
+const BASE_URL =
+    import.meta.env.VITE_API_URL || 'https://school-management-nvlx.onrender.com';
+
 const API = axios.create({
-    baseURL: import.meta.env.VITE_API_URL + '/api'
+    baseURL: BASE_URL + '/api'
 });
 
 // token interceptor
